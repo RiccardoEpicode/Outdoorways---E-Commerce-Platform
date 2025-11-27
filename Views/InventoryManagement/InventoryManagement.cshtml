@@ -1,0 +1,75 @@
+﻿@model E_Commerce_Outdoorways.Entities.Product
+
+@{
+    ViewData["Title"] = "Inventory Management";
+}
+
+<div class="container mt-5" style="max-width: 600px;">
+    <h2 class="mb-4 text-center">Inventory Management</h2>
+
+    <form method="post" class="border p-4 shadow-sm rounded bg-light">
+
+        <div class="mb-3">
+            <label class="form-label">Product ID (for Update/Delete)</label>
+            <input type="number" name="ProductId" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select name="CategoryId" class="form-select" required>
+                <option value="">Select Category</option>
+
+                @foreach (var c in ViewBag.Categories)
+                {
+                    <option value="@c.CategoryId">@c.CategoryName</option>
+                }
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Product Name</label>
+            <input type="text" name="ProductName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Product Description</label>
+            <textarea name="ProductDesc" class="form-control" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Price (€)</label>
+            <input type="number" step="0.01" min="0" oninput="this.value = Math.max(0, this.value)" name="Price" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Stock Quantity</label>
+            <input type="number" name="ProductQty" min="0" oninput="this.value = Math.max(0, this.value)" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Image File Name</label>
+            <input type="text" name="ProductIMG" class="form-control" placeholder="example: jacket1.jpg" />
+        </div>
+
+        <div class="d-flex gap-2">
+            <button type="submit" formaction="/InventoryManagement/AddProduct" 
+                    onclick="return confirm('Are you sure you want to Add this product?');" 
+                    class="btn btn-success w-100">
+                Add
+            </button>
+
+            <button type="submit" formaction="/InventoryManagement/UpdateProduct" 
+                    onclick="return confirm('Are you sure you want to Update this product?');" 
+                    class="btn btn-primary w-100">
+                Update
+            </button>
+
+            <button type="submit" formaction="/InventoryManagement/DeleteProduct"
+                    onclick="return confirm('Are you sure you want to Delete this product?');"
+                    class="btn btn-danger w-100">
+                Delete
+            </button>
+        </div>
+
+    </form>
+</div>

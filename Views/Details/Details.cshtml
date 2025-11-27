@@ -1,0 +1,25 @@
+﻿@model E_Commerce_Outdoorways.Entities.Product
+
+<section class="py-5 container">
+    <div class="row">
+        <div class="col-md-6">
+
+            <img src="/images/products/@Model.ProductIMG"
+                 class="img-fluid rounded shadow"
+                 style="max-height: 500px; object-fit: cover;" />
+        </div>
+
+        <div class="col-md-6">
+            <h2>@Model.ProductName</h2>
+            <p class="text-muted">@Model.Category.CategoryName</p>
+
+            <p>@Model.ProductDesc</p>
+
+            <h3 class="text-primary fw-bold">@Model.Price €</h3>
+
+            <a class="btn btn-primary" href="/Cart/Add/@Model.ProductId">
+                Add to Cart
+            </a>
+        </div>
+    </div>
+</section>

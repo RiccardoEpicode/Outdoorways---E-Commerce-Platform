@@ -1,0 +1,153 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<html>
+<body style="color: #5a5a5a;">
+    <main>
+        <div class="container col-xxl-8 px-4 py-5"> 
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5"> 
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="~/images/Hero2.png"
+                         class="d-block mx-lg-auto img-fluid"
+                         style="height: 550px; width: 100%; object-fit: cover;"
+                         alt="Hero Image" />
+                </div>
+                <div class="col-lg-6"> 
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+                        Discover the Outdoors with Confidence
+                    </h1>
+
+                    <p class="lead">
+                        Outdoorways is your trusted companion for high-quality
+                        outdoor gear. From rugged essentials to everyday adventure
+                        products, we bring durability, comfort, and style together —
+                        so you can explore without limits.
+                    </p>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-center">
+                        <a class="btn btn-primary" asp-controller="Products" asp-action="Shop"> Shop Now </a>                        
+                    </div> 
+                 </div> 
+             </div> 
+        </div>
+
+        <h1 style="text-align: center;" id="redirect">Check out our newest arrivals!</h1>
+        <hr class="featurette-divider">
+
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <style>
+                .carousel-item img {
+                    width: 100%;
+                    height: 600px;
+                    object-fit: cover;
+                }
+            </style>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="~/images/newarrivalJacket.jpg" alt="newarrivalJacket">
+
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Get ready for your next adventure!</h1>
+                            <p>
+                                <a class="btn btn-primary" asp-controller="Products" asp-action="Shop"> Shop Now </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="~/images/newarrivalScarf.jpg" alt="newarrivalScarf">
+
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Stay warm in every season.</h1>
+                            <p>
+                                <a class="btn btn-primary" asp-controller="Products" asp-action="Shop"> Shop Now </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="~/images/newarrivalShirt.jpg" alt="newarrivalShirt">
+
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Comfort meets performance.</h1>
+                            <p>
+                                <a class="btn btn-primary" asp-controller="Products" asp-action="Shop"> Shop Now </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="~/images/newarrivalSweater.jpg" alt="newarrivalSweater">
+
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Layer up for the journey ahead.</h1>
+                            <p>
+                                <a class="btn btn-primary" asp-controller="Products" asp-action="Shop"> Shop Now </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+
+        <br>
+        <br>
+
+        <h1 style="text-align: center;">Discover inspiration!</h1>
+        <p style="text-align: center;">Explore our Stories section for weekly outdoor living suggestions. Get creative and embark on your adventure now!</p>
+
+        <div class="container">
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">Shop for Your Next Outdoor Adventure with Family. <span class="text-muted">Everything You Need for an Unforgettable Experience.</span></h2>
+                    <p class="lead">At our outdoor ecommerce store, we offer a wide selection of gear and equipment for your next family adventure. From hiking and camping gear to outdoor apparel and accessories, we have everything you need to make your next trip a memorable one. Whether you're planning a weekend camping trip or a multi-day hiking expedition, our store has the products and expertise to help you make the most of your outdoor experience with your loved ones. Browse our selection today and start planning your next adventure!</p>
+                </div>
+                <div class="col-md-5 order-md-1 align-self-center">
+                    <div class="text-center">
+                        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid" src="~/images/winterCamping.jpg" width="500" height="500" alt="camping">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading fw-normal lh-1">Find Inspiration, Expert Advice, and More. <span class="text-muted">Check our Blog</span></h2>
+                    <p class="lead">At Outdoorways, we're passionate about helping people connect with nature and make the most of their time outside. Our website offers a wealth of resources to help you plan your next adventure, including articles on outdoor activities, expert advice on gear and equipment, and community forums where you can connect with other outdoor enthusiasts. We also offer a wide selection of products to help you get the most out of your outdoor experience, from hiking and camping gear to outdoor apparel and accessories. Whether you're a seasoned outdoor adventurer or just starting to explore, our website has everything you need to make your time outside more enjoyable and memorable. Explore our site today and discover all the ways we can help you connect with the great outdoors.</p>
+                </div>
+                <div class="col-md-5 order-md-1 align-self-center">
+                    <div class="text-center">
+                        <img src="~/images/Inspiration.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid" width="500" height="500" alt="Outdoor Inspiration">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

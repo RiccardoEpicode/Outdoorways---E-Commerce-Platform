@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "All Products";
+}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <div class="text-center mb-4">
+                <img src="~/logo.png" height="60" alt="Alternate Text" />
+            </div>
+            <h1 class="fw-light">Shop All</h1>
+            <p class="lead text-body-secondary">All of our products</p>
+        </div>
+    </div>
+</section>
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var p in Model)
+                {
+                    <div class="col">
+                        <div class="card shadow-sm">
+
+                        <img src="/images/products/@p.ProductIMG"
+                             class="bd-placeholder-img card-img-top"
+                             style="height: 250px; width: 100%; object-fit: cover;" />
+
+                            <div class="card-body">
+                                <h5 class="card-title">@p.ProductName</h5>
+                                <p class="text-muted">@p.Category.CategoryName</p>
+                                <h4 class="text-primary fw-bold">@p.Price €</h4>
+                                <a href="/Details/Details/@p.ProductId" class="btn btn-primary mt-2">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+    </div>
+</div> 

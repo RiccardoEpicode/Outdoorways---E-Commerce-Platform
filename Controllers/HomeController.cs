@@ -1,0 +1,21 @@
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+
+namespace E_Commerce_Outdoorways.Controllers
+{
+    public class HomeController : Controller
+    {
+      
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult About()
+        {
+            return View();
+        }
+
+      
+    }
+}

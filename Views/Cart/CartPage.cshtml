@@ -1,0 +1,55 @@
+﻿@model List<E_Commerce_Outdoorways.Entities.CartItem>
+
+<div class="py-4">
+
+<div class="text-center py-3">
+    <img src="~/logo.png" alt="logo" height="60" />
+</div>
+
+<div class="py-2">
+    <h1>YOUR ITEMS</h1>
+    <p>Check out you cart items.</p>
+</div>
+</div>
+
+
+@if (!Model.Any())
+{
+    <p>Your cart is empty.</p>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="/images/products/@item.ProductIMG" width="80" /></td>
+                <td>@item.ProductName</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price €</td>
+                <td>@(item.Price* item.Quantity) €</td>
+            </tr>
+        }
+    </table>
+
+    <h3>
+        Grand Total:
+        @Model.Sum(x => x.Price * x.Quantity) €
+    </h3>
+}
+<div class="py-4">
+    <div class="py-2">
+        <a class="btn btn-primary" asp-controller="" asp-action="">Buy Now</a>
+    </div>
+    <div class="py-2">
+        <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">Home Page</a>
+    </div>
+</div>
