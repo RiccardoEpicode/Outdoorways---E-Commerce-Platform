@@ -13,7 +13,7 @@ namespace E_Commerce_Outdoorways.Controllers
             _db = db;
         }
 
-        // GET: /Products/Index
+       
         public IActionResult Shop()
         {
             var products = _db.Products
