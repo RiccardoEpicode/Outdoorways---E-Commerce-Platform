@@ -17,9 +17,24 @@
 
             <h3 class="text-primary fw-bold">@Model.Price €</h3>
 
-            <a class="btn btn-primary" href="/Cart/Add/@Model.ProductId">
-                Add to Cart
-            </a>
+            <form asp-controller="Cart" asp-action="Add" method="post" class="d-flex gap-3 align-items-center mt-4">
+
+                <input type="hidden" name="id" value="@Model.ProductId" />
+
+                <input type="number"
+                       name="quantity"
+                       value="1"
+                       min="1"
+                       max="@Model.ProductQty"
+                       class="form-control"
+                       style="width: 90px;" 
+                       />
+
+                <button type="submit" class="btn btn-primary">
+                    Add to Cart
+                </button>
+            </form>
+
         </div>
     </div>
 </section>

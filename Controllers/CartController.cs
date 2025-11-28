@@ -24,18 +24,18 @@ public class CartController : Controller
     }
 
     // METHOD TO ADD PRODUCTS TO THE LIST
-    public IActionResult Add(int id)
+    [HttpPost]
+    public IActionResult Add(int id, int quantity)
     {
         var p = _db.Products.Find(id);
-        if (p == null)
-            return NotFound();
+        if (p == null) return NotFound();
 
         // ADDS PRODUCTS TO THE LIST AND CHECKS IF THERE ARE ANY 
         var existing = Cart.FirstOrDefault(x => x.ProductId == id);
 
         if (existing != null)
         {
-            existing.Quantity++;
+            existing.Quantity += quantity; 
         }
         else
         {
@@ -45,11 +45,13 @@ public class CartController : Controller
                 ProductName = p.ProductName,
                 Price = p.Price,
                 ProductIMG = p.ProductIMG,
-                Quantity = 1
+                Quantity = quantity
             });
         }
 
-        // REDIRECTS TO THE CART PAGE
+        ViewBag.CartCount = Cart.Sum(x => x.Quantity);
+
         return RedirectToAction("CartPage");
     }
+
 }
