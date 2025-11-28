@@ -1,94 +1,101 @@
 # Outdoorways – Applicazione E-Commerce ASP.NET MVC
 
-Outdoorways è una piattaforma e-commerce completa sviluppata con ASP.NET Core MVC, Entity Framework Core, SQL Server e Bootstrap.  
-Il progetto rappresenta un esempio reale di sito di vendita online, con gestione prodotti, categorie, carrello e sezione amministrativa per l’inventario.
+Outdoorways è una piattaforma e-commerce realizzata con **ASP.NET Core MVC**, **Entity Framework Core**, **SQL Server** e **Bootstrap**, progettata come progetto completo per mostrare un flusso reale di un negozio online: prodotti, categorie, carrello e gestione inventario.
 
 ---
 
-## Presentazione del Progetto
+## 📸 Presentazione del Progetto
 
-![Outdoorways](wwwroot/images/Presentazione.gif)
+![Presentazione del Progetto](wwwroot/images/Presentazione.gif)
 
 ---
 
-## ## Funzionalità Principali
+## 🚀 Funzionalità Principali
 
-- Navigazione prodotti per categoria:
-  - Men, Women, Kids, Winter, Summer, Spring, Autumn
+### Navigazione Prodotti
+- Categorie disponibili:
+  - **Men**, **Women**, **Kids**
+  - **Winter**, **Summer**, **Spring**, **Autumn**
 - Pagina generale *Shop All*
-- Pagina *Details* del prodotto con:
-  - immagine
-  - descrizione
+- Pagina *Dettagli Prodotto* con:
+  - immagine principale
   - categoria
+  - descrizione
   - prezzo
   - selezione quantità
-- Sistema di carrello:
-  - aggiunta prodotti
-  - quantità modificabile
-  - totale automatico
-  - lista temporanea lato server
+  - pulsante *Add to Cart*
 
-### Funzionalità Admin – Inventory Management
-- Aggiunta nuovi prodotti
+### 🛒 Sistema di Carrello
+- Aggiunta prodotti con quantità variabile
+- Lista persistente lato server (versione semplificata)
+- Calcolo automatico del totale
+- Visualizzazione riepilogo carrello
+
+### 🛠 Funzionalità Admin – Inventory Management
+- Aggiunta nuovi prodotti tramite form dedicato
 - Modifica prodotti esistenti
 - Eliminazione prodotti
-- Scelta categoria tramite dropdown
-- Gestione completa:
+- Dropdown dinamico per scelta categoria
+- Gestione attributi prodotto:
   - nome
   - descrizione
   - prezzo
-  - quantità
-  - immagine (nome file)
+  - quantità in magazzino
+  - immagine tramite filename
   - categoria
 
 ---
 
-## ## Stack Tecnologico
+## 🧱 Stack Tecnologico
 
 ### Backend
 - ASP.NET Core MVC
 - Entity Framework Core
 - SQL Server Express
 - Dependency Injection
+- Model Binding & Routing
 
 ### Frontend
 - Bootstrap 5
 - Razor Views
-- Layout responsive
+- Layout responsivo
+- Validazione lato client
 
 ---
 
-## ## Database e Relazioni
+## 🗂 Struttura Database & Relazioni
 
-![ERD](wwwroot/images/ERD.jpg)
+![ERD del Database](wwwroot/images/ERD.jpg)
 
+**Tabelle principali:**
+- `Categories`
+- `Products`
+- `Users`
+- `Orders`
+- `OrderItems`
 
-Tabelle principali:
-- Categories  
-- Products  
-- Users  
-- Orders  
-- OrderItems  
-
-Relazioni:
-- Category 1 → N Products  
-- User 1 → N Orders  
-- Order 1 → N OrderItems  
-- OrderItem → Product (FK)
+**Relazioni:**
+- Una *Category* → molti *Products*
+- Un *User* → molti *Orders*
+- Un *Order* → molti *OrderItems*
+- Un *OrderItem* → un *Product*
 
 ---
 
-## ## Caratteristiche Tecniche Implementate
+## ⚙️ Funzionalità Tecniche Implementate
 
-- Entity Framework Core Fluent API
-- Seed Data iniziale per categorie, prodotti e admin
+- Entity Framework Core con Migrations
+- Seed Data iniziale per categorie e prodotti
 - CRUD completo lato amministrazione
-- Sistema per categorie dinamiche
-- Carrello gestito tramite lista statica (versione semplificata)
-- Routing MVC
-- Migrations EF Core:
+- Gestione delle categorie tramite DB
+- Carrello con lista statica (implementazione basic)
+- Uso di ViewModel, ViewBag, Razor e Layout condiviso
+- Routing MVC e action methods REST-like
+- Validazioni con DataAnnotations
 
-## ## Autore
+---
+
+## 👨‍💻 Autore
 
 **Riccardo Reali**  
 Developer – ASP.NET Core, MVC, SQL, Web Development
