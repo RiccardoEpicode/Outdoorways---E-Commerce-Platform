@@ -4,6 +4,8 @@ Outdoorways è una piattaforma e-commerce realizzata con **ASP.NET Core MVC**, *
 
 ---
 
+PER ACCEDERE AL DBSM(DATABASE MANAGEMENT SYSTEM) DI GESTIONE PRODOTTI QUESTO E' IL PATH DA UTILIZZARE http://localhost:5141/InventoryManagement/InventoryManagement
+
 ## 📸 Presentazione del Progetto
 
 ![Presentazione del Progetto](wwwroot/images/Presentazione.gif)
